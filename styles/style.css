@@ -17,8 +17,6 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  overflow-x: none;
-  overflow-y: auto;
 }
 
 .visually-hidden {
@@ -53,11 +51,10 @@ ol {
 .content {
   display: flex;
   width:1140px;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   gap:30px;
   margin:133px 30px;
-  height:534px;
 }
 
 .result {
@@ -72,7 +69,7 @@ ol {
   display:flex;
   align-items: flex-end;
   width:399px;
-  height:100%;
+  height:534px;
   gap:26px;
   flex-direction: column;
 }
@@ -93,31 +90,26 @@ ol {
 }
 
 .result__video {
-  object-fit: contain;
+  object-fit: cover;
   width:100%;
   height:100%;
-}
-
-.title {
-  max-height:210px;
-  max-width:259px;
 }
 
 .content__list {
   display:flex;
   gap:30px;
   flex-wrap:wrap;
-  width:399px;
+  width:390px;
 }
 
 .content__list-container {
   display:flex;
   flex-wrap:wrap;
   height: 298px;
-  width:399px;
+  width:100%;
   overflow-y: auto;
-  overflow-x: hidden;
   gap:30px;
+  position:relative;
 }
 
 .content__list-item {
@@ -129,7 +121,7 @@ ol {
 
 .content__video-card {
   display:flex;
-  width:390px;
+  width:384px;
 }
 
 .content__video-card-description-container {
@@ -139,13 +131,8 @@ ol {
 .content__video-card-thumbnail {
   height:103px;
   min-width:194px;
-  object-fit:fill;
+  object-fit:cover;
   object-position: right;
-}
-
-.search-form__submit-button {
-  width:194px;
-  height:34px;
 }
 
 .search-form__fieldset:not(:first-of-type) {
@@ -162,7 +149,6 @@ ol {
 
 .title {
   width:260px;
-  height:210px;
   font-size:75px;
   line-height: 94%;
   text-transform: uppercase;
@@ -177,12 +163,14 @@ ol {
 .content__card-link {
   text-decoration: none;
   color:#fff;
+  display:block;
 }
 
 .content__video-card-title {
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 30px;
+  line-height:30px;
+  padding-bottom:6px;
   white-space:nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -190,11 +178,15 @@ ol {
 }
 
 .content__video-card-description {
-  white-space: nowrap;
-  line-clamp:1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  overflow: hidden;
   font-weight: 400;
+  padding-bottom:50px;
   font-size: 18px;
   line-height: 16.2px;
+  font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 .search-form__checkbox-list {
@@ -202,7 +194,7 @@ ol {
   gap: 15px;
 }
 
-.search-form__checkbox.visually-hidden {
+.search-form__checkbox {
   position: absolute;
   width: 19px;
   height: 19px;
@@ -213,7 +205,6 @@ ol {
 .search-form__fieldset {
   border: none;
   width: 212px;
-  height: 49px;
 }
 
  .search-form__label {
@@ -235,8 +226,8 @@ ol {
   border-left: none;
   border-right: none;
   border-color: #fff;
-  color:rgb(255 255 255 / 0.7);
-  background-color: #1b1919;
+  color:#fff;
+  background-color: transparent;
   appearance: none;
 }
 
@@ -285,23 +276,18 @@ ol {
   color:#fff;
   background-color:transparent;
   cursor: pointer;
+  min-height:34px;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .search-form__submit-button {
   align-self:flex-end;
   width:194px;
-  height:34px;
-  font-weight: 700;
-  font-size:18px;
-  font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 .more-button {
   width:100%;
-  height:34px;
-  font-weight: 700;
-  font-size: 18px;
-  font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 .button:hover {
@@ -319,14 +305,11 @@ ol {
 
 .button:focus-visible {
   outline:1px solid #fff;
-}
-
-.content__card-link {
-  display: block;
+  outline-offset: 1px;
 }
 
 .content__card-link_current {
-  background-color: #1b1919;
+  background-color: #545050;
 }
 
 .content__card-link:active {
@@ -335,7 +318,7 @@ ol {
 
 .content__card-link:hover {
   text-decoration: underline;
-  text-underline-offset: 6px;
+  text-underline-offset: 5px;
 }
 
 .content__card-link:focus {
@@ -344,12 +327,6 @@ ol {
 
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
-}
-
-.error__title {
-  font-size: 30px;
-  font-weight: 700;
-  text-align: center;
 }
 
 /* Кастомный скроллбар */
